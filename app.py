@@ -14,8 +14,23 @@ st.set_page_config(
     page_title="Generador de Contratos Automático",
     page_icon="📄",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
+
+# CSS para ocultar completamente el sidebar
+st.markdown("""
+<style>
+    .css-1d391kg {display: none;}
+    .css-1rs6os {display: none;}
+    .css-17eq0hr {display: none;}
+    section[data-testid="stSidebar"] {display: none;}
+    section[data-testid="stSidebar"][aria-expanded="true"] {display: none;}
+    section[data-testid="stSidebar"][aria-expanded="false"] {display: none;}
+    .css-1cypcdb {display: none;}
+    .css-1rs6os {display: none;}
+    .css-17eq0hr {display: none;}
+</style>
+""", unsafe_allow_html=True)
 
 def aplicar_formato_texto(paragraph, texto, es_variable=False):
     """
@@ -172,33 +187,35 @@ def main():
     # Título principal
     st.title("📄 Generador de Contratos Automático")
     st.markdown("---")
-    
+
     # Sidebar con información
-    with st.sidebar:
-        st.header("ℹ️ Información")
-        st.info("""
-        **Instrucciones:**
-        1. Sube tu plantilla Word (.docx)
-        2. Sube tu archivo Excel (.xlsx)
-        3. Verifica los datos en vista previa
-        4. Genera los contratos
-        5. Descarga el archivo ZIP
-        """)
+#    with st.sidebar:
+ #       st.header("ℹ️ Información")
+      #  st.info("""
+      #  **Instrucciones:**
+      #  1. Sube tu plantilla Word (.docx)
+      #  2. Sube tu archivo Excel (.xlsx)
+      #  3. Verifica los datos en vista previa
+      #  4. Genera los contratos
+      #  5. Descarga el archivo ZIP
+       # """)
         
-        st.header("📋 Variables requeridas")
-        variables_info = [
-            "[(CONTRATO NÚMERO)]",
-            "[(CÉDULA)]", 
-            "[(CORREO ELECTRÓNICO)]",
-            "[(NOMBRE)]",
-            "[(FECHA DE INICIO)]",
-            "[(FECHA FINALIZACIÓN)]",
-            "[(PLAZO EN DÍAS)]",
-            "[(VALOR TOTAL DEL CONTRATO SIN IVA)]"
-        ]
+  #      st.header("📋 Variables requeridas")
+   #     variables_info = [
+    #        "[(CONTRATO NÚMERO)]",
+     #       "[(CÉDULA)]", 
+      #      "[(CORREO ELECTRÓNICO)]",
+       #     "[(NOMBRE)]",
+        #    "[(FECHA DE INICIO)]",
+         #   "[(FECHA FINALIZACIÓN)]",
+          #  "[(PLAZO EN DÍAS)]",
+           # "[(VALOR TOTAL DEL CONTRATO SIN IVA)]"
+        #]
         
-        for var in variables_info:
-            st.code(var, language="text")
+      #  for var in variables_info:
+       #     st.code(var, language="text")
+
+
     
     # Columnas principales
     col1, col2 = st.columns([1, 1])
@@ -210,7 +227,7 @@ def main():
         plantilla_file = st.file_uploader(
             "Sube tu plantilla Word (.docx)",
             type=['docx'],
-            help="Archivo Word con las variables a reemplazar"
+            help="" #Archivo Word con las variables a reemplazar
         )
         
         # Upload Excel
