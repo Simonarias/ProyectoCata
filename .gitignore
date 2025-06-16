@@ -1,6 +1,3 @@
-# Ignora todos los archivos de texto
-*.txt
-
 # Ignora todos los archivos de excel
 *.xlsx
 
@@ -8,6 +5,7 @@
 *.docx
 
 appOficial.ipynb
+app_PruebaDeConcepto.ipynb
 
 #Carpeta
 .venv/
