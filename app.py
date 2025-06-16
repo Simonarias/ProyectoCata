@@ -227,7 +227,7 @@ def main():
         plantilla_file = st.file_uploader(
             "Sube tu plantilla Word (.docx)",
             type=['docx'],
-            help="" #Archivo Word con las variables a reemplazar
+            help="Archivo Word con las variables a reemplazar" #
         )
         
         # Upload Excel
@@ -335,8 +335,8 @@ def main():
     st.markdown("---")
     st.markdown(
         """
-        <div style='text-align: center; color: #666;'>
-            💡 Las variables reemplazadas aparecerán resaltadas en <span style='color: #0070C0; font-weight: bold;'>azul</span> en los documentos generados
+        <div style='text-align: center; color: ;'>
+        
         </div>
         """, 
         unsafe_allow_html=True
