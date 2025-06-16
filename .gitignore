@@ -1,0 +1,18 @@
+# Ignora todos los archivos de texto
+*.txt
+
+# Ignora todos los archivos de excel
+*.xlsx
+
+# Ignora todos los archivos de excel
+*.docx
+
+appOficial.ipynb
+
+#Carpeta
+.venv/
+
+
+# También es una buena práctica ignorar los cachés de Python
+__pycache__/
+*.pyc
